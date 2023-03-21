@@ -48,6 +48,12 @@ input {
 .dropdown-content {
   position: absolute;
   z-index: 1;
+  background-color: #888;
+}
+
+.dropdown-options {
+  overflow-y: scroll;
+  height: 400px;
 }
 
 .dropdown-content a {
@@ -58,6 +64,6 @@ input {
 }
 
 .dropdown-content a:hover {
-  background-color: aquamarine;
+  background-color: rgb(107, 212, 177);
   cursor: pointer;
 }
