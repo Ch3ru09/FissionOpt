@@ -39,7 +39,6 @@
         </div>
       </section>
       <section class="step2">
-        <br>
         <b>Step 2</b>: Click on the fuel you want to use in the table below.
         Most modpacks use the default config, except for E2E and PO3.
         Alternatively, you can manually enter the fuel data in the textboxes below.
@@ -50,7 +49,7 @@
         <div>Fuel Base Power: <input type="text" id="fuelBasePower"> RF/t</div>
         <div>Fuel Base Heat: <input text="text" id="fuelBaseHeat"> H/t</div>
         <div id="fuelPresets">
-          <table>
+          <!-- <table>
             <thead>
               <tr>
                 <td>Config</td>
@@ -327,17 +326,26 @@
                 <br><a href="javascript:;" id="PO3HECf251O">Oxide</a>
               </td>
             </tr>
-          </table>
+          </table> -->
+          <label for="selectFuels">Choose the fuel type:</label>
+          <div class="dropdown">
+            <button id="selectFuels">Select Your Fuel Type</button>
+            <div id="fuelOptions" class="dropdown-content">
+              <input type="text" placeholder="Search.." id="myInput">
+            </div>
+          </div>
+
         </div>
-      </section>
+        <br>
+        <div>
+          For ExtremeReactors' Yellorium or Blutonium, click LEU-235 Normal and then click <a href="javascript:;"
+            id="br">here</a> once.<br>
+          For IC2's Enriched Uranium Nuclear Fuel, click LEU-235 Normal and then click <a href="javascript:;"
+            id="ic2">here</a> once.<br>
+          For IC2's MOX Nuclear Fuel, click MOX-239 and then click <a href="javascript:;" id="ic2mox">here</a> once.
+        </div>
     </div>
-    <div>
-      For ExtremeReactors' Yellorium or Blutonium, click LEU-235 Normal and then click <a href="javascript:;"
-        id="br">here</a> once.<br>
-      For IC2's Enriched Uranium Nuclear Fuel, click LEU-235 Normal and then click <a href="javascript:;"
-        id="ic2">here</a> once.<br>
-      For IC2's MOX Nuclear Fuel, click MOX-239 and then click <a href="javascript:;" id="ic2mox">here</a> once.
-    </div>
+    </section>
     </div>
 
     <div class="container">

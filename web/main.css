@@ -33,8 +33,31 @@ input {
 .container {
   display: flex;
   flex-direction: row;
+  gap: 5%;
 }
 
 .size-input {
   width: 2rem;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 5px 8px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: aquamarine;
+  cursor: pointer;
 }
