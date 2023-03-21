@@ -34,3 +34,7 @@ input {
   display: flex;
   flex-direction: row;
 }
+
+.size-input {
+  width: 2rem;
+}

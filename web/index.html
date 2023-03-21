@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="colors.css" />
   <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script src="fuelSelection.js"></script>
   <script src="FissionOpt.js"></script>
   <script src="main.js"></script>
 </head>
@@ -30,20 +31,22 @@
       <section class="step1">
         <div>
           <b>Step 1</b>: Input the core (interior) size of the reactor:
-          <input type="text" id="sizeZ"> &times;
-          <input type="text" id="sizeX"> &times;
-          <input type="text" id="sizeY">
+          <div class="container">
+            <input type="text" id="sizeZ" class="size-input"> &times;
+            <input type="text" id="sizeX" class="size-input"> &times;
+            <input type="text" id="sizeY" class="size-input">
+          </div>
         </div>
       </section>
       <section class="step2">
-        <div>
-          <b>Step 2</b>: Click on the fuel you want to use in the table below. Most modpacks use the default config,
-          except for E2E and PO3.
-          Alternatively, you can manually enter the fuel data in the textboxes below.
-          The fuel data can be found in the tooltip of the fuel item. Do not use the data shown in JEI, they may be
-          incorrect.
-          You can also use IC2 and ExtremeReactors' fuels. See below the table for more details.
-        </div>
+        <br>
+        <b>Step 2</b>: Click on the fuel you want to use in the table below.
+        Most modpacks use the default config, except for E2E and PO3.
+        Alternatively, you can manually enter the fuel data in the textboxes below.
+        The fuel data can be found in the tooltip of the fuel item.
+        Do not use the data shown in JEI, they may be incorrect.
+        You can also use IC2 and ExtremeReactors' fuels.
+        See below the table for more details.
         <div>Fuel Base Power: <input type="text" id="fuelBasePower"> RF/t</div>
         <div>Fuel Base Heat: <input text="text" id="fuelBaseHeat"> H/t</div>
         <div id="fuelPresets">
@@ -324,8 +327,9 @@
                 <br><a href="javascript:;" id="PO3HECf251O">Oxide</a>
               </td>
             </tr>
+          </table>
+        </div>
       </section>
-      </table>
     </div>
     <div>
       For ExtremeReactors' Yellorium or Blutonium, click LEU-235 Normal and then click <a href="javascript:;"
