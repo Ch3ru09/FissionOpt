@@ -65,22 +65,29 @@ $(() => {
   const fuelBaseHeat = $("#fuelBaseHeat");
 
   for (x in fuelPresets) {
-    $("#fuelOptions").append(`<a>${x}</a>`);
+    $("#fuelOptions").append(`<a value="${x}" id="fuel_${x}">${x}</a>`);
+    $("#fuel_" + x).click(() => {
+
+    })
   }
 
   $(document).click((e) => {
-    if (e.target == $("#selectFuels")) return;
+    if (e.target.id == "searchFuels") return;
     if ($.contains($("#fuelDropdown"), e.target)) return;
-    if (!$("#fuelDropdown").hasClass("show")) return;
-    $("#fuelDropdown").removeClass("show");
+    if (!$("#fuelOptions").hasClass("show")) return;
+    $("#fuelOptions").removeClass("show");
+    $("#searchFuels").removeClass("reveal");
+    $("#selectFuels").removeClass("reveal");
   });
 
   $("#selectFuels").click(() => {
     setTimeout(() => {
-      $("#fuelDropdown").toggleClass("show");
-      // $("#selectFuels").addClass("close");
-      $("#searchFuels").focus();
+      $("#fuelOptions").addClass("show");
+      $("#searchFuels").addClass("reveal");
+      $("#selectFuels").addClass("reveal");
+      setTimeout(() => {
+        $("#searchFuels").focus();
+      }, 500)
     }, 1);
   });
-});
-
+})
