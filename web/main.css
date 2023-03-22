@@ -8,7 +8,8 @@ table {
   white-space: nowrap;
 }
 
-td, th {
+td,
+th {
   text-align: center;
   font-weight: normal;
   padding: 4px;
@@ -40,8 +41,36 @@ input {
   width: 2rem;
 }
 
+#fuelsMenu {
+  background-color:rgb(147, 255, 39);
+  position: relative;
+  overflow: hidden;
+}
+
+#fuelsMenu > * {
+  margin: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+#selectFuels {
+  width: 100%;
+}
+
+#selectFuels:hover {
+  width: 0%;
+  transition: all 0.5s ease;
+}
+
+#searchFuels {
+  width: 0%;
+}
+
 .dropdown {
   position: relative;
+  top: 0;
   display: inline-block;
 }
 
@@ -49,11 +78,20 @@ input {
   position: absolute;
   z-index: 1;
   background-color: #888;
+  display: none;
 }
 
 .dropdown-options {
   overflow-y: scroll;
   height: 400px;
+}
+
+.dropdown-content input {
+  width: 90%;
+  margin-left: 50%;
+  translate: -50%;
+  outline: none;
+  border: none;
 }
 
 .dropdown-content a {
@@ -66,4 +104,8 @@ input {
 .dropdown-content a:hover {
   background-color: rgb(107, 212, 177);
   cursor: pointer;
+}
+
+.show {
+  display: block;
 }

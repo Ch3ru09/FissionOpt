@@ -61,15 +61,26 @@ $(() => {
     "HECf251-oxide": { Default: [1260, 900], E2E: [7560, 1080], PO3: [378000, 3600] },
   };
 
-  const fuelBasePower = $('#fuelBasePower');
-  const fuelBaseHeat = $('#fuelBaseHeat');
+  const fuelBasePower = $("#fuelBasePower");
+  const fuelBaseHeat = $("#fuelBaseHeat");
 
   for (x in fuelPresets) {
-    $("#fuelOptions").append(`<a>${x}</a>`)
+    $("#fuelOptions").append(`<a>${x}</a>`);
   }
 
-  $("#selectFuels").click(() => {
-    $("#fuelOptions").toggle()
+  $(document).click((e) => {
+    if (e.target == $("#selectFuels")) return;
+    if ($.contains($("#fuelDropdown"), e.target)) return;
+    if (!$("#fuelDropdown").hasClass("show")) return;
+    $("#fuelDropdown").removeClass("show");
   });
 
+  $("#selectFuels").click(() => {
+    setTimeout(() => {
+      $("#fuelDropdown").toggleClass("show");
+      // $("#selectFuels").addClass("close");
+      $("#searchFuels").focus();
+    }, 1);
+  });
 });
+
