@@ -74,13 +74,23 @@ $(() => {
   }
   generateDropdown();
 
+  function closeDropdown() {
+    $("#fuelOptions").removeClass("show");
+    $("#searchFuels").removeClass("reveal");
+    $("#selectFuels").removeClass("reveal");
+  }
+
   $(document).click((e) => {
     if (e.target.id == "searchFuels") return;
     if ($.contains($("#fuelDropdown"), e.target)) return;
     if (!$("#fuelOptions").hasClass("show")) return;
-    $("#fuelOptions").removeClass("show");
-    $("#searchFuels").removeClass("reveal");
-    $("#selectFuels").removeClass("reveal");
+    closeDropdown();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key != "Escape") return;
+    if (!$("#fuelOptions").hasClass("show")) return;
+    closeDropdown();
   });
 
   $("#selectFuels").click(() => {
@@ -88,7 +98,8 @@ $(() => {
       $("#fuelOptions").addClass("show");
       $("#searchFuels").addClass("reveal");
       $("#selectFuels").addClass("reveal");
-      setTimeout(() => {
+      const TO = setTimeout(() => {
+        if (!$("#fuelOptions").hasClass("show")) return;
         $("#searchFuels").focus();
       }, 250);
     }, 1);
