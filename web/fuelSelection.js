@@ -63,17 +63,16 @@ $(() => {
 
   const fuelBasePower = $("#fuelBasePower");
   const fuelBaseHeat = $("#fuelBaseHeat");
-  let filter = ""
+  let filter = "";
 
   function generateDropdown() {
     for (x in fuelPresets) {
-      if (filter && !x.toLowerCase().includes(filter)) continue
+      if (filter && !x.toLowerCase().includes(filter)) continue;
       $("#fuelOptions").append(`<a value="${x}" id="fuel_${x}">${x}</a>`);
-      $("#fuel_" + x).click(() => {
-
-      })
+      $("#fuel_" + x).click(() => {});
     }
-  } generateDropdown()
+  }
+  generateDropdown();
 
   $(document).click((e) => {
     if (e.target.id == "searchFuels") return;
@@ -91,16 +90,17 @@ $(() => {
       $("#selectFuels").addClass("reveal");
       setTimeout(() => {
         $("#searchFuels").focus();
-      }, 500)
+      }, 250);
     }, 1);
   });
 
   function regenerateDropdown(e) {
     filter = e.target.value.toLowerCase().trim();
-    $("#fuelOptions").empty()
-    generateDropdown()
+    $("#fuelOptions").empty();
+    generateDropdown();
   }
 
-  $("#searchFuels").keypress(regenerateDropdown)
-  $("#searchFuels").keyup(regenerateDropdown)
-})
+  $("#searchFuels").keypress(regenerateDropdown);
+  $("#searchFuels").keyup(regenerateDropdown);
+});
+

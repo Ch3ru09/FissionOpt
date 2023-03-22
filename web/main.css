@@ -44,6 +44,7 @@ input {
 #fuelsMenu {
   background-color:rgb(147, 255, 39);
   position: relative;
+  top: 100%;
   overflow: hidden;
 }
 
@@ -57,7 +58,7 @@ input {
 }
 
 #selectFuels {
-  transition: all 500ms ease;
+  transition: all ease 250ms;
 }
 
 #searchFuels {
@@ -68,7 +69,7 @@ input {
 
 .dropdown {
   position: relative;
-  top: 0;
+  top: 8px;
   display: inline-block;
 }
 
@@ -76,7 +77,7 @@ input {
   position: absolute;
   z-index: 1;
   background-color: #888;
-  width: 150px;
+  width: 100%;
 }
 
 .dropdown-options {
@@ -120,5 +121,5 @@ input {
 
 .reveal {
   transform: translate(-100%);
-  transition: all 0.5s ease;
+  transition: all 250ms ease;
 }
