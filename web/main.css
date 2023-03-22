@@ -76,15 +76,14 @@ input {
   position: absolute;
   z-index: 1;
   background-color: #888;
-  display: none;
+  width: 150px;
 }
 
 .dropdown-options {
   overflow-y: scroll;
-  height: 0;
+  max-height: 0;
   transition: all ease 500ms;
 }
-/* height: 400px; */
 
 .dropdown-content input {
   width: 90%;
@@ -115,7 +114,7 @@ input {
 }
 
 .show {
-  height: 400px;
+  max-height: 400px;
   transition: all ease 500ms;
 }
 

@@ -63,13 +63,17 @@ $(() => {
 
   const fuelBasePower = $("#fuelBasePower");
   const fuelBaseHeat = $("#fuelBaseHeat");
+  let filter = ""
 
-  for (x in fuelPresets) {
-    $("#fuelOptions").append(`<a value="${x}" id="fuel_${x}">${x}</a>`);
-    $("#fuel_" + x).click(() => {
+  function generateDropdown() {
+    for (x in fuelPresets) {
+      if (filter && !x.toLowerCase().includes(filter)) continue
+      $("#fuelOptions").append(`<a value="${x}" id="fuel_${x}">${x}</a>`);
+      $("#fuel_" + x).click(() => {
 
-    })
-  }
+      })
+    }
+  } generateDropdown()
 
   $(document).click((e) => {
     if (e.target.id == "searchFuels") return;
@@ -90,4 +94,13 @@ $(() => {
       }, 500)
     }, 1);
   });
+
+  function regenerateDropdown(e) {
+    filter = e.target.value.toLowerCase().trim();
+    $("#fuelOptions").empty()
+    generateDropdown()
+  }
+
+  $("#searchFuels").keypress(regenerateDropdown)
+  $("#searchFuels").keyup(regenerateDropdown)
 })
