@@ -1,3 +1,12 @@
+/* colors: https://coolors.co/28536b-c2948a-7ea8be-f6f0ed-bbb193 */
+:root {
+  --charcoal: #28536bff;
+  --rosy-brown: #c2948aff;
+  --air-superiority-blue: #7ea8beff;
+  --isabelline: #f6f0edff;
+  --khaki: #bbb193ff;
+}
+
 body {
   line-height: 150%;
 }
@@ -42,7 +51,7 @@ input {
 }
 
 #fuelsMenu {
-  background-color:rgb(147, 255, 39);
+  background-color: rgb(170, 170, 170);
   position: relative;
   top: 100%;
   overflow: hidden;
@@ -58,6 +67,7 @@ input {
 }
 
 #selectFuels {
+  width: 150px;
   transition: all ease 250ms;
 }
 

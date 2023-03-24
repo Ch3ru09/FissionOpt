@@ -68,8 +68,10 @@ $(() => {
   function generateDropdown() {
     for (x in fuelPresets) {
       if (filter && !x.toLowerCase().includes(filter)) continue;
-      $("#fuelOptions").append(`<a value="${x}" id="fuel_${x}">${x}</a>`);
-      $("#fuel_" + x).click(() => {});
+      $("#fuelOptions").append(`<a id="fuel_${x}" href="javascript:;">${x}</a>`);
+      $("#fuel_" + x).click((e) => {
+        $("#selectFuels").text(e.target.innerText);
+      });
     }
   }
   generateDropdown();
