@@ -50,14 +50,14 @@ input {
   width: 2rem;
 }
 
-#fuelsMenu {
+.d-menu {
   background-color: rgb(170, 170, 170);
   position: relative;
   top: 100%;
   overflow: hidden;
 }
 
-#fuelsMenu > * {
+.d-menu > * {
   border: none;
   outline: none;
   background-color: transparent;
@@ -66,12 +66,12 @@ input {
   width: 100%;
 }
 
-#selectFuels {
+.select-button {
   width: 150px;
   transition: all ease 250ms;
 }
 
-#searchFuels {
+.search {
   position: absolute;
   top: 50%;
   translate: 0 -50%;
@@ -131,5 +131,9 @@ input {
 
 .reveal {
   transform: translate(-100%);
-  transition: all 250ms ease;
+  transition: transform 250ms ease;
+}
+
+.inline-block {
+  display: inline-block;
 }

@@ -65,21 +65,27 @@ $(() => {
   const fuelBaseHeat = $("#fuelBaseHeat");
   let filter = "";
 
-  function generateDropdown() {
-    for (x in fuelPresets) {
+  function generateDropdown(set, element, location, button) {
+    for (let x in set) {
       if (filter && !x.toLowerCase().includes(filter)) continue;
-      $("#fuelOptions").append(`<a id="fuel_${x}" href="javascript:;">${x}</a>`);
-      $("#fuel_" + x).click((e) => {
-        $("#selectFuels").text(e.target.innerText);
+      $("#" + location).append(`<a id="${element}_${x}" href="javascript:;" tabindex="-1">${x}</a>`);
+      $("#" + element + "_" + x).click((e) => {
+        $("#" + button).text(e.target.innerText);
+        addDropdown(e.target.innerText);
       });
     }
   }
-  generateDropdown();
+  generateDropdown(fuelPresets, "fuel", "fuelOptions", "selectFuel");
+
+  function addDropdown(fuel) {
+    $("#");
+    generateDropdown(fuelPresets[fuel], "version", "versionOptions", "selectVersion");
+  }
 
   function closeDropdown() {
     $("#fuelOptions").removeClass("show");
     $("#searchFuels").removeClass("reveal");
-    $("#selectFuels").removeClass("reveal");
+    $("#selectFuel").removeClass("reveal");
   }
 
   $(document).click((e) => {
@@ -95,11 +101,11 @@ $(() => {
     closeDropdown();
   });
 
-  $("#selectFuels").click(() => {
+  $("#selectFuel").click(() => {
     setTimeout(() => {
       $("#fuelOptions").addClass("show");
       $("#searchFuels").addClass("reveal");
-      $("#selectFuels").addClass("reveal");
+      $("#selectFuel").addClass("reveal");
       const TO = setTimeout(() => {
         if (!$("#fuelOptions").hasClass("show")) return;
         $("#searchFuels").focus();
@@ -110,10 +116,12 @@ $(() => {
   function regenerateDropdown(e) {
     filter = e.target.value.toLowerCase().trim();
     $("#fuelOptions").empty();
-    generateDropdown();
+    generateDropdown(fuelPresets, "fuel", "fuelOptions");
   }
 
-  $("#searchFuels").keypress(regenerateDropdown);
-  $("#searchFuels").keyup(regenerateDropdown);
+  for (let x of ["Fuels", "Versions"]) {
+    $("#search" + x).keypress(regenerateDropdown);
+    $("#search" + x).keyup(regenerateDropdown);
+  }
 });
 

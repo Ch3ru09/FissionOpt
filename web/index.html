@@ -49,17 +49,30 @@
         <div>Fuel Base Power: <input type="text" id="fuelBasePower"> RF/t</div>
         <div>Fuel Base Heat: <input text="text" id="fuelBaseHeat"> H/t</div>
         <div id="fuelPresets">
-          <label for="selectFuels">Choose the fuel type:</label>
-          <div class="dropdown">
-            <div id="fuelsMenu">
-              <button id="selectFuels">Select Your Fuel Type</button>
-              <input id="searchFuels" type="text" placeholder="Search.." >
-            </div>
-            <div class="dropdown-content" id="fuelDropdown">
-              <div id="fuelOptions" class="dropdown-options"></div>
+          <div>
+            <label for="selectFuel">Choose the fuel type:</label>
+            <div class="dropdown">
+              <div id="fuelsMenu" class="d-menu">
+                <button id="selectFuel" class="select-button">Select Your Fuel Type</button>
+                <input id="searchFuels" class="search" type="text" placeholder="Search..." tabindex="-1">
+              </div>
+              <div class="dropdown-content" id="fuelDropdown">
+                <div id="fuelOptions" class="dropdown-options"></div>
+              </div>
             </div>
           </div>
-
+          <div>
+            <label for="selectVersion">Choose the version:</label>
+            <div class="dropdown">
+              <div id="versionsMenu" class="d-menu">
+                <button id="selectVersion" class="select-button">Select Your Version</button>
+                <input id="searchVersions" class="search" type="text" placeholder="Search..." tabindex="-1">
+              </div>
+              <div class="dropdown-content" id="versionDropdown">
+                <div id="versionOptions" class="dropdown-options"></div>
+              </div>
+            </div>
+          </div>
         </div>
         <br>
         <div>
