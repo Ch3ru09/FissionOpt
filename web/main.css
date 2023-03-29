@@ -124,6 +124,14 @@ input {
   cursor: pointer;
 }
 
+#versionContainer {
+  display: none;
+}
+
+.d-block {
+  display: block !important;
+}
+
 .show {
   max-height: 400px;
   transition: all ease 500ms;

@@ -63,65 +63,69 @@ $(() => {
 
   const fuelBasePower = $("#fuelBasePower");
   const fuelBaseHeat = $("#fuelBaseHeat");
+  let selectedFuel = "";
+  let selectedVersion = "";
   let filter = "";
 
   function generateDropdown(set, element, location, button) {
+    console.log(button);
     for (let x in set) {
       if (filter && !x.toLowerCase().includes(filter)) continue;
       $("#" + location).append(`<a id="${element}_${x}" href="javascript:;" tabindex="-1">${x}</a>`);
       $("#" + element + "_" + x).click((e) => {
         $("#" + button).text(e.target.innerText);
-        addDropdown(e.target.innerText);
+        if (element == "fuel") {
+          selectedFuel = e.target.innerText;
+          $("#versionContainer").addClass("d-block");
+          regenerateDropdown("", "version");
+        } else if (element == "version") {
+          selectedVersion = e.target.innerText;
+        }
       });
     }
   }
-  generateDropdown(fuelPresets, "fuel", "fuelOptions", "selectFuel");
+  generateDropdown(fuelPresets, "fuel", "fuelOptions", "selectfuel");
 
-  function addDropdown(fuel) {
-    $("#");
-    generateDropdown(fuelPresets[fuel], "version", "versionOptions", "selectVersion");
-  }
+  for (let ans of ["fuel", "version"]) {
+    function closeDropdown() {
+      $("#" + ans + "Options").removeClass("show");
+      $("#search" + ans).removeClass("reveal");
+      $("#select" + ans).removeClass("reveal");
+    }
 
-  function closeDropdown() {
-    $("#fuelOptions").removeClass("show");
-    $("#searchFuels").removeClass("reveal");
-    $("#selectFuel").removeClass("reveal");
-  }
+    $(document).click((e) => {
+      if (e.target.id == `search${ans}`) return;
+      if ($.contains($("#" + ans + "dropdown"), e.target)) return;
+      if (!$("#" + ans + "Options").hasClass("show")) return;
+      closeDropdown();
+    });
 
-  $(document).click((e) => {
-    if (e.target.id == "searchFuels") return;
-    if ($.contains($("#fuelDropdown"), e.target)) return;
-    if (!$("#fuelOptions").hasClass("show")) return;
-    closeDropdown();
-  });
+    document.addEventListener("keydown", function (e) {
+      if (e.key != "Escape") return;
+      if (!$("#" + ans + "Options").hasClass("show")) return;
+      closeDropdown();
+    });
 
-  document.addEventListener("keydown", function (e) {
-    if (e.key != "Escape") return;
-    if (!$("#fuelOptions").hasClass("show")) return;
-    closeDropdown();
-  });
+    $("#select" + ans).click(() => {
+      setTimeout(() => {
+        $("#" + ans + "Options").addClass("show");
+        $("#search" + ans).addClass("reveal");
+        $("#select" + ans).addClass("reveal");
+        const TO = setTimeout(() => {
+          if (!$("#" + ans + "Options").hasClass("show")) return;
+          $("#search" + ans).focus();
+        }, 250);
+      }, 1);
+    });
 
-  $("#selectFuel").click(() => {
-    setTimeout(() => {
-      $("#fuelOptions").addClass("show");
-      $("#searchFuels").addClass("reveal");
-      $("#selectFuel").addClass("reveal");
-      const TO = setTimeout(() => {
-        if (!$("#fuelOptions").hasClass("show")) return;
-        $("#searchFuels").focus();
-      }, 250);
-    }, 1);
-  });
+    function regenerateDropdown(text, element) {
+      filter = text;
+      $("#" + element + "Options").empty();
+      generateDropdown(element == "fuel" ? fuelPresets : fuelPresets[selectedFuel], element, `${element}Options`, `select${element}`);
+    }
 
-  function regenerateDropdown(e) {
-    filter = e.target.value.toLowerCase().trim();
-    $("#fuelOptions").empty();
-    generateDropdown(fuelPresets, "fuel", "fuelOptions");
-  }
-
-  for (let x of ["Fuels", "Versions"]) {
-    $("#search" + x).keypress(regenerateDropdown);
-    $("#search" + x).keyup(regenerateDropdown);
+    $("#search" + ans).keypress((e) => regenerateDropdown(e.target.value.toLowerCase().trim(), text, ans));
+    $("#search" + ans).keyup((e) => regenerateDropdown(e.target.value.toLowerCase().trim(), text, ans));
   }
 });
 
