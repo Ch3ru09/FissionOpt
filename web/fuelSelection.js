@@ -67,8 +67,13 @@ $(() => {
   let selectedVersion = "";
   let filter = "";
 
+  function getPreset(fuel, version) {
+    const [power, heat] = fuelPresets[fuel][version];
+    fuelBasePower.val(power);
+    fuelBaseHeat.val(heat);
+  }
+
   function generateDropdown(set, element, location, button) {
-    console.log(button);
     for (let x in set) {
       if (filter && !x.toLowerCase().includes(filter)) continue;
       $("#" + location).append(`<a id="${element}_${x}" href="javascript:;" tabindex="-1">${x}</a>`);
@@ -80,11 +85,19 @@ $(() => {
           regenerateDropdown("", "version");
         } else if (element == "version") {
           selectedVersion = e.target.innerText;
+          getPreset(selectedFuel, selectedVersion);
         }
       });
     }
   }
-  generateDropdown(fuelPresets, "fuel", "fuelOptions", "selectfuel");
+
+  function regenerateDropdown(text, element) {
+    filter = text;
+    $("#" + element + "Options").empty();
+    generateDropdown(element == "fuel" ? fuelPresets : fuelPresets[selectedFuel], element, `${element}Options`, `select${element}`);
+  }
+
+  regenerateDropdown("", "fuel");
 
   for (let ans of ["fuel", "version"]) {
     function closeDropdown() {
@@ -117,12 +130,6 @@ $(() => {
         }, 250);
       }, 1);
     });
-
-    function regenerateDropdown(text, element) {
-      filter = text;
-      $("#" + element + "Options").empty();
-      generateDropdown(element == "fuel" ? fuelPresets : fuelPresets[selectedFuel], element, `${element}Options`, `select${element}`);
-    }
 
     $("#search" + ans).keypress((e) => regenerateDropdown(e.target.value.toLowerCase().trim(), text, ans));
     $("#search" + ans).keyup((e) => regenerateDropdown(e.target.value.toLowerCase().trim(), text, ans));
