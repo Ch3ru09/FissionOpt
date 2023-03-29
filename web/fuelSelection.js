@@ -83,6 +83,11 @@ $(() => {
           selectedFuel = e.target.innerText;
           $("#versionContainer").addClass("d-block");
           regenerateDropdown("", "version");
+          if (e.target.innerText == "UraniumIngot") {
+            selectedVersion = "E2E";
+            $(`#selectversion`).text(selectedVersion);
+            getPreset(selectedFuel, selectedVersion);
+          }
         } else if (element == "version") {
           selectedVersion = e.target.innerText;
           getPreset(selectedFuel, selectedVersion);
