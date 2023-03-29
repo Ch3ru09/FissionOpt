@@ -1,3 +1,12 @@
+/* colors: https://coolors.co/28536b-c2948a-7ea8be-f6f0ed-bbb193 */
+:root {
+  --charcoal: #28536bff;
+  --rosy-brown: #c2948aff;
+  --air-superiority-blue: #7ea8beff;
+  --isabelline: #f6f0edff;
+  --khaki: #bbb193ff;
+}
+
 body {
   line-height: 150%;
 }
@@ -8,7 +17,8 @@ table {
   white-space: nowrap;
 }
 
-td, th {
+td,
+th {
   text-align: center;
   font-weight: normal;
   padding: 4px;
@@ -33,4 +43,105 @@ input {
 .container {
   display: flex;
   flex-direction: row;
+  gap: 5%;
+}
+
+.size-input {
+  width: 2rem;
+}
+
+.d-menu {
+  background-color: rgb(170, 170, 170);
+  position: relative;
+  top: 100%;
+  overflow: hidden;
+}
+
+.d-menu > * {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  overflow: hidden;
+  height: 1rem;
+  width: 100%;
+}
+
+.select-button {
+  width: 150px;
+  transition: all ease 250ms;
+}
+
+.search {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.dropdown {
+  position: relative;
+  top: 8px;
+  display: inline-block;
+}
+
+.dropdown-content {
+  position: absolute;
+  z-index: 1;
+  background-color: #888;
+  width: 100%;
+}
+
+.dropdown-options {
+  overflow-y: scroll;
+  max-height: 0;
+  transition: all ease 500ms;
+}
+
+.dropdown-content input {
+  width: 90%;
+  margin-left: 50%;
+  translate: -50%;
+  outline: none;
+  border: none;
+}
+
+.dropdown-content input {
+  width: 90%;
+  margin-left: 50%;
+  translate: -50%;
+  outline: none;
+  border: none;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 5px 8px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(107, 212, 177);
+  cursor: pointer;
+}
+
+#versionContainer {
+  display: none;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.show {
+  max-height: 400px;
+  transition: all ease 500ms;
+}
+
+.reveal {
+  transform: translate(-100%);
+  transition: transform 250ms ease;
+}
+
+.inline-block {
+  display: inline-block;
 }
