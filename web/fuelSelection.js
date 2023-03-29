@@ -136,8 +136,8 @@ $(() => {
       }, 1);
     });
 
-    $("#search" + ans).keypress((e) => regenerateDropdown(e.target.value.toLowerCase().trim(), text, ans));
-    $("#search" + ans).keyup((e) => regenerateDropdown(e.target.value.toLowerCase().trim(), text, ans));
+    $("#search" + ans).keypress((e) => regenerateDropdown(e.target.value.toLowerCase().trim(), ans));
+    $("#search" + ans).keyup((e) => regenerateDropdown(e.target.value.toLowerCase().trim(), ans));
   }
 });
 
