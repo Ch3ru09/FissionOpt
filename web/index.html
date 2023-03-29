@@ -28,7 +28,7 @@
   </header>
   <main id="settings">
     <div class="container">
-      <section class="step1">
+      <section class="step1 part">
         <div>
           <b>Step 1</b>: Input the core (interior) size of the reactor:
           <div class="container">
@@ -38,7 +38,7 @@
           </div>
         </div>
       </section>
-      <section class="step2">
+      <section class="step2 part">
         <b>Step 2</b>: Click on the fuel you want to use in the table below.
         Most modpacks use the default config, except for E2E and PO3.
         Alternatively, you can manually enter the fuel data in the textboxes below.
@@ -46,8 +46,10 @@
         Do not use the data shown in JEI, they may be incorrect.
         You can also use IC2 and ExtremeReactors' fuels.
         See below the table for more details.
-        <div>Fuel Base Power: <input type="text" id="fuelBasePower"> RF/t</div>
-        <div>Fuel Base Heat: <input text="text" id="fuelBaseHeat"> H/t</div>
+        <div class="main-inputs">
+          <div>Fuel Base Power: <input type="text" id="fuelBasePower"> RF/t</div>
+          <div>Fuel Base Heat: <input text="text" id="fuelBaseHeat"> H/t</div>
+        </div>
         <div id="fuelPresets">
           <div>
             <label for="selectfuel">Choose the fuel type:</label>
@@ -76,9 +78,9 @@
         </div>
         <br>
         <div>
-          For ExtremeReactors' Yellorium or Blutonium, click LEU-235 Normal and then click <a href="javascript:;"
+          For ExtremeReactors' Yellorium or Blutonium, select LEU-235 - Default and then click <a href="javascript:;"
             id="br">here</a> once.<br>
-          For IC2's Enriched Uranium Nuclear Fuel, click LEU-235 Normal and then click <a href="javascript:;"
+          For IC2's Enriched Uranium Nuclear Fuel, click LEU-235 - Default and then click <a href="javascript:;"
             id="ic2">here</a> once.<br>
           For IC2's MOX Nuclear Fuel, click MOX-239 and then click <a href="javascript:;" id="ic2mox">here</a> once.
         </div>
@@ -86,7 +88,7 @@
     </div>
 
     <div class="container">
-      <section class="part3">
+      <section class="part3 part">
         <div>
           <b>Step 3</b>: Load the cooling rate data by clicking on one of the following modpack configs:
           <a href="javascript:;" id="DefRate">Default</a>
@@ -95,7 +97,7 @@
           Passive cooling rates are in the tooltip of each cooler item. Active cooling rates are in JEI.
         </div>
       </section>
-      <section class="part4">
+      <section class="part4 part">
         <div>
           <b>Step 4</b>: If you want to limit the usage of a type of block, enter the maximum number allowed in the table
           below.
@@ -209,8 +211,10 @@
           </tbody>
         </table> -->
       </section>
-      
-      <section class="part5">
+    </div>
+
+    <div class="container">
+      <section class="part5 part">
         <div>
           <b>Step 5</b>: Adjust the options below and click &ldquo;Run&rdquo; to start the optimization.<br>
           <label><input type="checkbox" id="ensureActiveCoolerAccessible" checked>Ensure active coolers are accessible by
@@ -244,6 +248,7 @@
         </div>
       </section>
     </div>
+
     <main>
       <div>
         <a href="javascript:;" id="run">Run</a>

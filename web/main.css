@@ -43,16 +43,23 @@ input {
 .container {
   display: flex;
   flex-direction: row;
-  gap: 5%;
-  margin-top: 2%;
+}
+
+.part {
+  border: solid 1px black;
+  padding: 2%;
 }
 
 .size-input {
   width: 2rem;
 }
 
+.main-inputs {
+  margin-top: 10px;
+}
+
 .d-menu {
-  background-color: rgb(170, 170, 170);
+  background-color: rgb(222, 222, 222);
   position: relative;
   top: 100%;
   overflow: hidden;
@@ -87,14 +94,18 @@ input {
 .dropdown-content {
   position: absolute;
   z-index: 1;
-  background-color: #888;
   width: 100%;
+  background-color: #f9f9f9;
+  box-shadow: 0 14px 35px 0 rgba(9,9,12,0.4);
+  transition: all 250ms linear;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .dropdown-options {
   overflow-y: scroll;
   max-height: 0;
-  transition: all ease 500ms;
+  transition: all ease 250ms;
 }
 
 .dropdown-content input {
@@ -121,20 +132,22 @@ input {
 }
 
 .dropdown-content a:hover {
-  background-color: rgb(107, 212, 177);
+  background-color: #eee;
   cursor: pointer;
 }
 
 #versionContainer {
-  display: none;
+  visibility: hidden;
 }
 
 .d-block {
-  display: block !important;
+  visibility: visible !important;
 }
 
 .show {
-  max-height: 400px;
+  max-height: 220px;
+  padding: 5px;
+  width: calc(100%-10px);
   transition: all ease 500ms;
 }
 
