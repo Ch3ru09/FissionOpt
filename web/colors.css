@@ -16,3 +16,66 @@
 .air {color: white;}
 .cell {color: gray;}
 .mod {color: black;}
+
+/* colors: https://coolors.co/d64045-e9fff9-9ed8db-72a7ba-467599-1d3354 */
+:root {
+    --red-100: hsla(358, 65%, 90%, 1);
+    --red-200: hsla(358, 65%, 80%, 1);
+    --red-300: hsla(358, 65%, 70%, 1);
+    --red-400: hsla(358, 65%, 60%, 1);
+    --red-500: hsla(358, 65%, 50%, 1);
+    --red-600: hsla(358, 65%, 40%, 1);
+    --red-700: hsla(358, 65%, 30%, 1);
+    --red-800: hsla(358, 65%, 20%, 1);
+    --red-900: hsla(358, 65%, 10%, 1);
+  
+    --green-100: hsla(164, 100%, 90%, 1);
+    --green-200: hsla(164, 100%, 80%, 1);
+    --green-300: hsla(164, 100%, 70%, 1);
+    --green-400: hsla(164, 100%, 60%, 1);
+    --green-500: hsla(164, 100%, 50%, 1);
+    --green-600: hsla(164, 100%, 40%, 1);
+    --green-700: hsla(164, 100%, 30%, 1);
+    --green-800: hsla(164, 100%, 20%, 1);
+    --green-900: hsla(164, 100%, 10%, 1);
+  
+    --turquoise-100: hsla(183, 46%, 90%, 1);
+    --turquoise-200: hsla(183, 46%, 80%, 1);
+    --turquoise-300: hsla(183, 46%, 70%, 1);
+    --turquoise-400: hsla(183, 46%, 60%, 1);
+    --turquoise-500: hsla(183, 46%, 50%, 1);
+    --turquoise-600: hsla(183, 46%, 40%, 1);
+    --turquoise-700: hsla(183, 46%, 30%, 1);
+    --turquoise-800: hsla(183, 46%, 20%, 1);
+    --turquoise-900: hsla(183, 46%, 10%, 1);
+  
+    --moonstone-100: hsla(196, 34%, 90%, 1);
+    --moonstone-200: hsla(196, 34%, 80%, 1);
+    --moonstone-300: hsla(196, 34%, 70%, 1);
+    --moonstone-400: hsla(196, 34%, 60%, 1);
+    --moonstone-500: hsla(196, 34%, 50%, 1);
+    --moonstone-600: hsla(196, 34%, 40%, 1);
+    --moonstone-700: hsla(196, 34%, 30%, 1);
+    --moonstone-800: hsla(196, 34%, 20%, 1);
+    --moonstone-900: hsla(196, 34%, 10%, 1);
+  
+    --blue-100: hsla(206, 37%, 90%, 1);
+    --blue-200: hsla(206, 37%, 80%, 1);
+    --blue-300: hsla(206, 37%, 70%, 1);
+    --blue-400: hsla(206, 37%, 60%, 1);
+    --blue-500: hsla(206, 37%, 50%, 1);
+    --blue-600: hsla(206, 37%, 40%, 1);
+    --blue-700: hsla(206, 37%, 30%, 1);
+    --blue-800: hsla(206, 37%, 20%, 1);
+    --blue-900: hsla(206, 37%, 10%, 1);
+  
+    --delft-100: hsla(216, 49%, 90%, 1);
+    --delft-200: hsla(216, 49%, 80%, 1);
+    --delft-300: hsla(216, 49%, 70%, 1);
+    --delft-400: hsla(216, 49%, 60%, 1);
+    --delft-500: hsla(216, 49%, 50%, 1);
+    --delft-600: hsla(216, 49%, 40%, 1);
+    --delft-700: hsla(216, 49%, 30%, 1);
+    --delft-800: hsla(216, 49%, 20%, 1);
+    --delft-900: hsla(216, 49%, 10%, 1);
+  }

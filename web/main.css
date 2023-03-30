@@ -1,14 +1,7 @@
-/* colors: https://coolors.co/28536b-c2948a-7ea8be-f6f0ed-bbb193 */
-:root {
-  --charcoal: #28536bff;
-  --rosy-brown: #c2948aff;
-  --air-superiority-blue: #7ea8beff;
-  --isabelline: #f6f0edff;
-  --khaki: #bbb193ff;
-}
 
 body {
   line-height: 150%;
+  background-color: var(--red-100);
 }
 
 table {
@@ -22,7 +15,7 @@ th {
   text-align: center;
   font-weight: normal;
   padding: 4px;
-  background-color: white;
+
 }
 
 h2 {
@@ -48,6 +41,26 @@ input {
 .part {
   border: solid 1px black;
   padding: 2%;
+}
+
+.part1 {
+  background-color: var(--green-200);
+}
+
+.part2 {
+  background-color: var(--turquoise-300);
+}
+
+.part3 {
+  background-color: var(--moonstone-400);
+}
+
+.part4 {
+  background-color: var(--blue-600);
+}
+
+.part5 {
+  background-color: var(--delft-400);
 }
 
 .size-input {

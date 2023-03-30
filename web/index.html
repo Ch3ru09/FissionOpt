@@ -28,7 +28,7 @@
   </header>
   <main id="settings">
     <div class="container">
-      <section class="step1 part">
+      <section class="part1 part">
         <div>
           <b>Step 1</b>: Input the core (interior) size of the reactor:
           <div class="container">
@@ -38,7 +38,7 @@
           </div>
         </div>
       </section>
-      <section class="step2 part">
+      <section class="part2 part">
         <b>Step 2</b>: Click on the fuel you want to use in the table below.
         Most modpacks use the default config, except for E2E and PO3.
         Alternatively, you can manually enter the fuel data in the textboxes below.
@@ -84,7 +84,7 @@
             id="ic2">here</a> once.<br>
           For IC2's MOX Nuclear Fuel, click MOX-239 and then click <a href="javascript:;" id="ic2mox">here</a> once.
         </div>
-    </section>
+      </section>
     </div>
 
     <div class="container">
@@ -99,9 +99,11 @@
       </section>
       <section class="part4 part">
         <div>
-          <b>Step 4</b>: If you want to limit the usage of a type of block, enter the maximum number allowed in the table
+          <b>Step 4</b>: If you want to limit the usage of a type of block, enter the maximum number allowed in the
+          table
           below.
-          Enter zero to completely disable that block. You can hover over the acronym to see the full name of each block.
+          Enter zero to completely disable that block. You can hover over the acronym to see the full name of each
+          block.
           Active coolers are disabled by default. You can enable them by removing the zeros.
         </div>
         <!-- <table>
@@ -217,7 +219,8 @@
       <section class="part5 part">
         <div>
           <b>Step 5</b>: Adjust the options below and click &ldquo;Run&rdquo; to start the optimization.<br>
-          <label><input type="checkbox" id="ensureActiveCoolerAccessible" checked>Ensure active coolers are accessible by
+          <label><input type="checkbox" id="ensureActiveCoolerAccessible" checked>Ensure active coolers are accessible
+            by
             piping.</label><br>
           <label><input type="checkbox" id="ensureHeatNeutral" checked>Only generate heat neutral reactor.</label><br>
           <label><input type="radio" name="goal" value="0" checked>Optimize for power.</label><br>
@@ -243,22 +246,24 @@
             href="https://github.com/hellrage/NC-Reactor-Planner/releases/tag/v1.2.25">Hellrage's Reactor Planner</a>,
           and then click &ldquo;Generate BG string&rdquo;. Then you can paste it in the <a
             href="https://github.com/Direwolf20-MC/BuildingGadgets/wiki/Template-Manager">Template Manager</a>.<br>
-          <span style="color:red;">Note: in Chrome, this tab won't run in background! If you want to switch to other tabs,
+          <span style="color:red;">Note: in Chrome, this tab won't run in background! If you want to switch to other
+            tabs,
             drag this tab out as a dedicated window and don't minimize it.</span>
         </div>
       </section>
+      <main>
+        <div>
+          <a href="javascript:;" id="run">Run</a>
+          <a href="javascript:;" id="pause" class="disabledLink">Pause</a>
+          <a href="javascript:;" id="stop" class="disabledLink">Stop</a>
+          <a href="javascript:;" id="save" class="disabledLink">Save JSON</a>
+        </div>
+        <div id="progress"></div>
+        <div id="design"></div>
+      </main>
     </div>
 
-    <main>
-      <div>
-        <a href="javascript:;" id="run">Run</a>
-        <a href="javascript:;" id="pause" class="disabledLink">Pause</a>
-        <a href="javascript:;" id="stop" class="disabledLink">Stop</a>
-        <a href="javascript:;" id="save" class="disabledLink">Save JSON</a>
-      </div>
-      <div id="progress"></div>
-      <div id="design"></div>
-    </main>
+
 </body>
 
 </html>
