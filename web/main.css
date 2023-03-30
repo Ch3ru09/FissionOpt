@@ -72,7 +72,7 @@ input {
 }
 
 .d-menu {
-  background-color: rgb(222, 222, 222);
+  background-color: var(--turquoise-200);
   position: relative;
   top: 100%;
   overflow: hidden;
@@ -108,7 +108,7 @@ input {
   position: absolute;
   z-index: 1;
   width: 100%;
-  background-color: #f9f9f9;
+  background-color: var(--delft-200);
   box-shadow: 0 14px 35px 0 rgba(9,9,12,0.4);
   transition: all 250ms linear;
   border-bottom-left-radius: 10px;
@@ -145,7 +145,7 @@ input {
 }
 
 .dropdown-content a:hover {
-  background-color: #eee;
+  background-color: var(--delft-100);
   cursor: pointer;
 }
 
