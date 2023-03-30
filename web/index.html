@@ -9,6 +9,7 @@
   <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <script src="fuelSelection.js"></script>
+  <script src="fuelRates.js"></script>
   <script src="FissionOpt.js"></script>
   <script src="main.js"></script>
 </head>
@@ -96,6 +97,7 @@
           <a href="javascript:;" id="PO3Rate">PO3</a>. Alternatively, you can enter the data yourself.
           Passive cooling rates are in the tooltip of each cooler item. Active cooling rates are in JEI.
         </div>
+        <div id="rates"></div>
       </section>
       <section class="part4 part">
         <div>
@@ -218,7 +220,7 @@
     <div class="container">
       <section class="part5 part">
         <div>
-          <b>Step 5</b>: Adjust the options below and click &ldquo;Run&rdquo; to start the optimization.<br>
+          <b>Step 5</b>: Adjust the options below and click &ldquo; Run &rdquo; to start the optimization.<br>
           <label><input type="checkbox" id="ensureActiveCoolerAccessible" checked>Ensure active coolers are accessible
             by
             piping.</label><br>

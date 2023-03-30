@@ -39,7 +39,6 @@ input {
 }
 
 .part {
-  border: solid 1px black;
   padding: 2%;
 }
 
@@ -155,6 +154,10 @@ input {
 
 .d-block {
   visibility: visible !important;
+}
+
+.i-block {
+  display: inline-block;
 }
 
 .show {
